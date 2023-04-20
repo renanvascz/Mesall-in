@@ -1,0 +1,86 @@
+import React from 'react';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+
+export default function VoiceCall() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Ligação</Text>
+        <TouchableOpacity style={styles.endCallButton}>
+          <Feather name="phone-off" size={24} color="#fff" />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.callerInfo}>
+        <Text style={styles.callerName}>Augusto</Text>
+        <Text style={styles.callerStatus}>Conectando... </Text>
+      </View>
+      <View style={styles.controls}>
+        <TouchableOpacity style={styles.controlButton}>
+          <Feather name="volume-2" size={24} color="#2196f3" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.controlButton}>
+          <Feather name="mic-off" size={24} color="#2196f3" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.controlButton}>
+          <Feather name="camera" size={24} color="#2196f3" />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header: {
+    backgroundColor: '#2196f3',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  title: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  endCallButton: {
+    backgroundColor: '#f44336',
+    borderRadius: 50,
+    padding: 10,
+  },
+  callerInfo: {
+    alignItems: 'center',
+    marginTop: 50,
+  },
+  callerName: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  callerStatus: {
+    fontSize: 18,
+    color: '#2196f3',
+  },
+  controls: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 50,
+  },
+  controlButton: {
+    backgroundColor: '#fff',
+    borderRadius: 50,
+    marginHorizontal: 20,
+    padding: 10,
+    elevation: 3,
+  },
+});
